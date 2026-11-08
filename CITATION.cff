@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated research paper. Replace the placeholders when publication details are available."
+title: "AI-Enhanced Mpox Diagnosis"
+type: software
+authors:
+  - family-names: "REPLACE"
+    given-names: "REPLACE"
+version: 1.0.0
+date-released: 2026-11-08

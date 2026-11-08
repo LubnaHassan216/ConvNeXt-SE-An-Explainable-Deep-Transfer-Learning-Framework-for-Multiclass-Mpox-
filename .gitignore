@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Experiment outputs
+runs/
+outputs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.log
+
+# Data
+data/raw/
+data/processed/
+data/MSLD*/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets
+.env
+*.pem
+*.key
