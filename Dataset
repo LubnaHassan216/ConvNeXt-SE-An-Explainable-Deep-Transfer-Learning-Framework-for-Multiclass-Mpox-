@@ -1,1 +1,46 @@
 
+# Dataset preparation
+
+## Source
+
+The project uses the external **Mpox Skin Lesion Dataset Version 2.0 (MSLD v2.0)**. Obtain it from its official Kaggle dataset page:
+
+https://www.kaggle.com/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20
+
+Follow Kaggle's current access and usage terms. Do not upload the dataset images to this repository unless you have explicit redistribution permission.
+
+## Expected organization
+
+The final experiment's exact folder names must match the scripts and split manifests. A common prepared layout is:
+
+```text
+FINAL_PIPELINE_DATASET/
+├── Train/
+│   ├── CHP/
+│   ├── CWP/
+│   ├── HEALTHY/
+│   ├── HFMD/
+│   ├── MSL/
+│   └── MKP/
+├── Val/
+│   └── [same six class folders]
+└── Test/
+    └── [same six class folders]
+```
+
+If your experiment uses `Valid` rather than `Val`, update the configuration and all scripts consistently. Do not silently rename folders if a notebook or split-generation script relies on the original names.
+
+## Data leakage precautions
+
+- Keep the independent test set isolated from model development.
+- Fit preprocessing parameters only on the training data where applicable.
+- Apply augmentation only to training samples.
+- Preserve the original split/fold assignments.
+- Save a manifest of file paths and labels for every split.
+- Run duplicate screening across Train, Val, and Test before training.
+
+## Class labels
+
+CHP: Chickenpox; CWP: Cowpox; HEALTHY: Healthy; HFMD: Hand-foot-mouth disease; MSL: Measles; MKP: Monkeypox.
+
+The mapping in this document is descriptive. Use the exact numeric class-index mapping from the released experiment code.
